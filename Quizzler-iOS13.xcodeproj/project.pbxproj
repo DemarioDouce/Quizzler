@@ -14,6 +14,8 @@
 		AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5222D878BC005BA4CC /* Assets.xcassets */; };
 		AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */; };
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
+		AF179CA824733920000B48AD /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF179CA724733920000B48AD /* QuizBrain.swift */; };
+		AF179CAA2473444F000B48AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF179CA92473444F000B48AD /* Default-568h@2x.png */; };
 		AF47F5C624730DD10060E4B1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47F5C524730DD10060E4B1 /* Question.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		AD4BDE5522D878BC005BA4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD4BDE5722D878BC005BA4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7631B522F9851900C6E71B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AF179CA724733920000B48AD /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		AF179CA92473444F000B48AD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AF47F5C524730DD10060E4B1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,8 +48,13 @@
 		AD4BDE3D22D878BA005BA4CC = {
 			isa = PBXGroup;
 			children = (
+				AF179CA92473444F000B48AD /* Default-568h@2x.png */,
 				AD7631B522F9851900C6E71B /* README.md */,
 				AD4BDE4822D878BA005BA4CC /* Quizzler-iOS13 */,
+				AD4BDE5222D878BC005BA4CC /* Assets.xcassets */,
+				AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */,
+				AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */,
+				AD4BDE5722D878BC005BA4CC /* Info.plist */,
 				AD4BDE4722D878BA005BA4CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,16 +70,37 @@
 		AD4BDE4822D878BA005BA4CC /* Quizzler-iOS13 */ = {
 			isa = PBXGroup;
 			children = (
-				AD4BDE4922D878BA005BA4CC /* AppDelegate.swift */,
-				AD4BDE4B22D878BA005BA4CC /* SceneDelegate.swift */,
-				AD4BDE4F22D878BA005BA4CC /* Main.storyboard */,
-				AD4BDE4D22D878BA005BA4CC /* ViewController.swift */,
-				AD4BDE5222D878BC005BA4CC /* Assets.xcassets */,
-				AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */,
-				AD4BDE5722D878BC005BA4CC /* Info.plist */,
-				AF47F5C524730DD10060E4B1 /* Question.swift */,
+				AF47F5C7247319A30060E4B1 /* Model */,
+				AF47F5C8247319C80060E4B1 /* View */,
+				AF47F5C9247319D70060E4B1 /* Controller */,
 			);
 			path = "Quizzler-iOS13";
+			sourceTree = "<group>";
+		};
+		AF47F5C7247319A30060E4B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF47F5C524730DD10060E4B1 /* Question.swift */,
+				AF179CA724733920000B48AD /* QuizBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF47F5C8247319C80060E4B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD4BDE4F22D878BA005BA4CC /* Main.storyboard */,
+				AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF47F5C9247319D70060E4B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AD4BDE4D22D878BA005BA4CC /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +164,7 @@
 				AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */,
 				AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */,
 				AD7631B622F9851900C6E71B /* README.md in Resources */,
+				AF179CAA2473444F000B48AD /* Default-568h@2x.png in Resources */,
 				AD4BDE5122D878BA005BA4CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF179CA824733920000B48AD /* QuizBrain.swift in Sources */,
 				AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */,
 				AF47F5C624730DD10060E4B1 /* Question.swift in Sources */,
 				AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */,
@@ -294,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUL34M32PL;
-				INFOPLIST_FILE = "Quizzler-iOS13/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XUL34M32PL;
-				INFOPLIST_FILE = "Quizzler-iOS13/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

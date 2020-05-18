@@ -1,21 +1,15 @@
 //
-//  ViewController.swift
+//  QuizBrain.swift
 //  Quizzler-iOS13
 //
-//  Created by Angela Yu on 12/07/2019.
-//  Copyright © 2019 The App Brewery. All rights reserved.
+//  Created by Demario Douce on 2020-05-18.
+//  Copyright © 2020 The App Brewery. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-    //UI elements
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
+struct QuizBrain{
     
-    //data source
     let quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -31,53 +25,38 @@ class ViewController: UIViewController {
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     
-    //counter
     var questionNumber = 0
+    var score = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        updateUI()
-    }
-
-    //button function
-    @IBAction func answerButtonPressed(_ sender: UIButton) {
-        let userAnsswer = sender.currentTitle
-        let actualAnswer = quiz[questionNumber].answer
-        
-        if userAnsswer == actualAnswer{
-            sender.backgroundColor = UIColor.green
-          
-        }else {
-            sender.backgroundColor = UIColor.red
-            
+    mutating func checkAnswer(_ userAnswer:String) -> Bool{
+        if userAnswer == quiz[questionNumber].answer{
+            score += 1
+            return true
+        } else {
+            return false
         }
-       
+    }
+    
+    func getQuestionTitle() -> String{
         
-        //Check if the question number is less than quiz array
+        return quiz[questionNumber].text
+    }
+    
+    func getProgress() -> Float {
+        return Float(questionNumber) / Float(quiz.count)
+    }
+    
+    mutating func nextQuestion()  {
+        
         if questionNumber + 1 < quiz.count {
             questionNumber += 1
         } else {
-            
+            score = 0
             questionNumber = 0
         }
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-        
-        
-        
     }
     
-    //Update array
-    @objc func updateUI(){
-        
-        questionLabel.text = quiz[questionNumber].text
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
-        progressBar.progress = Float(questionNumber) / Float(quiz.count)
-        
+    func scoreCheck() -> Int {
+        return score
     }
-    
-    
 }
-
