@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     //UI elements
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -16,20 +17,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    //Init from model
     var quizBrain = QuizBrain()
     
     
     
     
+    //Run when app first load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateUI()
     }
     
-    //button function
+    //Button function
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+       
+        //Get the value text of the button
         let userAnsswer = sender.currentTitle!
+        
         let userGorItRight = quizBrain.checkAnswer(userAnsswer)
         
         if userGorItRight{
@@ -42,13 +48,14 @@ class ViewController: UIViewController {
         
         quizBrain.nextQuestion()
         
+        //Timer
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
         
         
     }
     
-    //Update array
+    //Update
     @objc func updateUI(){
         
         questionLabel.text = quizBrain.getQuestionTitle()
