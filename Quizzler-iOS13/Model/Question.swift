@@ -10,6 +10,7 @@ import Foundation
 
 struct Question {
     
+    //Data title structure
     let text: String
     let answer: String
     
