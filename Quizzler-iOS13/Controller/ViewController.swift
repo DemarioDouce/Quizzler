@@ -36,8 +36,10 @@ class ViewController: UIViewController {
         //Get the value text of the button
         let userAnsswer = sender.currentTitle!
         
+        //Use the checkAnswer func from quiz brain and pass userAnsswer to it
         let userGorItRight = quizBrain.checkAnswer(userAnsswer)
         
+        //Change the color of the buttons if right or wrong
         if userGorItRight{
             sender.backgroundColor = UIColor.green
             
@@ -46,21 +48,24 @@ class ViewController: UIViewController {
             
         }
         
+        //Shows next queston
         quizBrain.nextQuestion()
         
-        //Timer
+        //Timer to allow the colors to be soon as the program is excuted same time
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
         
         
     }
     
-    //Update
+    //Update UI elements 
     @objc func updateUI(){
         
         questionLabel.text = quizBrain.getQuestionTitle()
         progressBar.progress = quizBrain.getProgress()
         scoreLabel.text = "Score: \(quizBrain.scoreCheck())"
+        
+        //Restore UI buttons to normal
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
         
