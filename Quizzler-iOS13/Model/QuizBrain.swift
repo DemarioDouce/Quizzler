@@ -26,14 +26,16 @@ struct QuizBrain{
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     
-    //Question skipper variable 
+    //Question skipper variable for array
     var questionNumber = 0
     
     //Score check variable 
     var score = 0
     
+    //Check if user answer matches the answer in the array
     mutating func checkAnswer(_ userAnswer:String) -> Bool{
         if userAnswer == quiz[questionNumber].answer{
+            //Increase score
             score += 1
             return true
         } else {
@@ -41,16 +43,20 @@ struct QuizBrain{
         }
     }
     
+    //Get the question from the array
     func getQuestionTitle() -> String{
         
         return quiz[questionNumber].text
     }
     
+    //Get the number in float to pass to the progress bar.
     func getProgress() -> Float {
         return Float(questionNumber) / Float(quiz.count)
     }
     
+    //Prevent the index out of range error from happening.
     mutating func nextQuestion()  {
+        
         
         if questionNumber + 1 < quiz.count {
             questionNumber += 1
@@ -60,6 +66,7 @@ struct QuizBrain{
         }
     }
     
+    //get the score value
     func scoreCheck() -> Int {
         return score
     }
