@@ -10,6 +10,7 @@ import Foundation
 
 struct QuizBrain{
     
+    //2D array
     let quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -25,7 +26,10 @@ struct QuizBrain{
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     
+    //Question skipper variable 
     var questionNumber = 0
+    
+    //Score check variable 
     var score = 0
     
     mutating func checkAnswer(_ userAnswer:String) -> Bool{
