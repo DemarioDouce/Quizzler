@@ -1,6 +1,6 @@
 # Quizzler
 ---
 ## Screenshot
-![Quizzler mockup image.](/Mockups/MockupQuizzler.png)
+![Mockup image.](/Mockups/MockupQuizzler.png)
 ---
 
